@@ -31,10 +31,10 @@
 */ 
             var vx = vy = 0;
             var px =10;
-            var py = 15;
-            var tp = 30;
-            var qp = 20;
-            var ax=ay=15;
+            var py = 10;
+            var tp = 40;
+            var qp = 15;
+            var ax=ay=5;
             
             var trail = [];
             tail = 5;
@@ -121,16 +121,16 @@
                 model.detect(video)
                 .then(predections => {
                     if(x != 0 && y!= 0){
-                        if(x-parseInt(predections[1].bbox[0])>20){
+                        if(x-parseInt(predections[1].bbox[0])>30){
                             keyPush(39)
                         }
-                        if(y-parseInt(predections[1].bbox[1])>40){
+                        if(y-parseInt(predections[1].bbox[1])>50){
                             keyPush(38)
                         }
-                        if(x-parseInt(predections[1].bbox[0])<-20){
+                        if(x-parseInt(predections[1].bbox[0])<-30){
                             keyPush(37)
                         }
-                        if(y-parseInt(predections[1].bbox[1])<-40){
+                        if(y-parseInt(predections[1].bbox[1])<-50){
                             keyPush(40)
                         } 
                     }
