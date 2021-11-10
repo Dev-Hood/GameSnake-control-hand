@@ -1,0 +1,10 @@
+#video{
+    transform: rotateY(180deg);
+  
+}
+git init 
+git add README.md 
+git commit -m "first commit" 
+git branch -M main 
+git remote add origin https://github.com/Dev-Hood/ GameSnake-control-hand.git
+ git push -u origin main
