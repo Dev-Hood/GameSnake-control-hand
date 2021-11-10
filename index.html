@@ -106,13 +106,12 @@
             const canvas = document.querySelector('#canvas')
             const context = canvas.getContext('2d')
             let model
-
             handTrack.startVideo(video).then( status =>{
                     if(status){
                         navigator.getUserMedia({video:{}}, 
                         stream =>{
                             video.srcObject = stream
-                            setInterval(rundetection,1000)
+                            setInterval(rundetection,500)
                         },
                         err => console.log(err)
                         )
