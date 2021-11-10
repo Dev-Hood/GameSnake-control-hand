@@ -111,7 +111,7 @@
                         navigator.getUserMedia({video:{}}, 
                         stream =>{
                             video.srcObject = stream
-                            setInterval(rundetection,500)
+                            setInterval(rundetection,150)
                         },
                         err => console.log(err)
                         )
