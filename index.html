@@ -18,17 +18,24 @@
             var stage = document.getElementById('stage');
             var ctx = stage.getContext("2d");
             //document.addEventListener("keydown", keyPush);
-            setInterval(game, 150);
+            setInterval(game, 160);
  
             const vel = 1;
- 
+ /*
             var vx = vy = 0;
             var px =10;
             var py = 15;
             var tp = 30;
             var qp = 20;
             var ax=ay=15;
- 
+*/ 
+            var vx = vy = 0;
+            var px =10;
+            var py = 15;
+            var tp = 30;
+            var qp = 20;
+            var ax=ay=15;
+            
             var trail = [];
             tail = 5;
  
@@ -76,6 +83,7 @@
                 }
  
             }
+
             const modelParams = {
                 flipHorizontal: false,
                 outputStride: 16,
@@ -114,21 +122,21 @@
                 model.detect(video)
                 .then(predections => {
                     if(x != 0 && y!= 0){
-                        if(x-parseInt(predections[0].bbox[0])>20){
+                        if(x-parseInt(predections[1].bbox[0])>20){
                             keyPush(39)
                         }
-                        if(y-parseInt(predections[0].bbox[1])>40){
+                        if(y-parseInt(predections[1].bbox[1])>40){
                             keyPush(38)
                         }
-                        if(x-parseInt(predections[0].bbox[0])<-20){
+                        if(x-parseInt(predections[1].bbox[0])<-20){
                             keyPush(37)
                         }
-                        if(y-parseInt(predections[0].bbox[1])<-40){
+                        if(y-parseInt(predections[1].bbox[1])<-40){
                             keyPush(40)
                         } 
                     }
-                    x = Number((predections[0].bbox[0]).toFixed())
-                    y = Number((predections[0].bbox[1]).toFixed())
+                    x = Number((predections[1].bbox[0]).toFixed())
+                    y = Number((predections[1].bbox[1]).toFixed())
                     
                 })
             }
@@ -136,7 +144,7 @@
             handTrack.load(modelParams).then(lmodel => {
                 model = lmodel
             })
- 
+
             function keyPush(key){
  
                 switch (key) {
