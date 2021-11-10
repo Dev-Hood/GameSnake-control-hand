@@ -115,21 +115,21 @@
                 model.detect(video)
                 .then(predections => {
                     if(x != 0 && y!= 0){
-                        if(x-parseInt(predections[1].bbox[0])>20){
+                        if(x-parseInt(predections[0].bbox[0])>20){
                             keyPush(39)
                         }
-                        if(y-parseInt(predections[1].bbox[1])>40){
+                        if(y-parseInt(predections[0].bbox[1])>40){
                             keyPush(38)
                         }
-                        if(x-parseInt(predections[1].bbox[0])<-20){
+                        if(x-parseInt(predections[0].bbox[0])<-20){
                             keyPush(37)
                         }
-                        if(y-parseInt(predections[1].bbox[1])<-40){
+                        if(y-parseInt(predections[0].bbox[1])<-40){
                             keyPush(40)
                         } 
                     }
-                    x = Number((predections[1].bbox[0]).toFixed())
-                    y = Number((predections[1].bbox[1]).toFixed())
+                    x = Number((predections[0].bbox[0]).toFixed())
+                    y = Number((predections[0].bbox[1]).toFixed())
                     
                         console.log('X: ',x,'Y: ',y)
                         console.log(predections ,'aaaaaaaa')
