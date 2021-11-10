@@ -110,7 +110,6 @@
                         )
                     }
             })
-            cont = 0
             function rundetection(){
                 model.detect(video)
                 .then(predections => {
@@ -131,11 +130,6 @@
                     x = Number((predections[0].bbox[0]).toFixed())
                     y = Number((predections[0].bbox[1]).toFixed())
                     
-                        console.log('X: ',x,'Y: ',y)
-                        console.log(predections ,'aaaaaaaa')
-                        cont++
-                    
-                    //model.renderPredictions(predections,canvas, context, video)
                 })
             }
 
